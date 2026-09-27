@@ -1,0 +1,1 @@
+venv/\n.env\n__pycache__/\n*.pyc\nchroma_db/\ndata/*.pdf\n.DS_Store\n
