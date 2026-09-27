@@ -1,0 +1,1 @@
+streamlit\npypdf\nchromadb\nopenai\npython-dotenv\npydantic\ntiktoken\npandas\n
