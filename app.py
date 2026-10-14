@@ -10,6 +10,15 @@ from src.generator import generate_answer
 
 load_dotenv()
 
+try:
+    if "GEMINI_API_KEY" in st.secrets:
+        os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
+
+    if "GEMINI_CHAT_MODEL" in st.secrets:
+        os.environ["GEMINI_CHAT_MODEL"] = st.secrets["GEMINI_CHAT_MODEL"]
+except Exception:
+    pass
+
 st.set_page_config(
     page_title="AI Document Assistant",
     page_icon="📄",
