@@ -1,1 +1,5 @@
-streamlit\npypdf\nchromadb\nopenai\npython-dotenv\npydantic\ntiktoken\npandas\n
+streamlit>=1.40,<2
+python-dotenv>=1.0,<2
+pypdf>=5,<7
+chromadb>=0.5.23,<2
+openai>=1.50,<3
