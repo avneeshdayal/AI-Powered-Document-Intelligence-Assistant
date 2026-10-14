@@ -1,10 +1,11 @@
+from io import BytesIO
 from pypdf import PdfReader
 
-def extract_pages(file_path):
-    reader = PdfReader(file_path)
+def extract_pages(pdf_bytes: bytes, filename: str):
+    reader = PdfReader(BytesIO(pdf_bytes))
     pages = []
-    for page_number, page in enumerate(reader.pages, start=1):
-        text = page.extract_text() or ""
-        if text.strip():
-            pages.append({"page": page_number, "text": text.strip()})
+    for number, page in enumerate(reader.pages, start=1):
+        text = (page.extract_text() or "").strip()
+        if text:
+            pages.append({"text": text, "source": filename, "page": number})
     return pages
